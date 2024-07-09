@@ -20,3 +20,14 @@
     "supertest": "^7.0.0"
   }
 }
+{
+  "jest": {
+    "transformIgnorePatterns": [
+      "/node_modules/(?!bson)/"
+    ],
+    "testPathIgnorePatterns": [
+      "/node_modules/",
+      "/backend/server.js"
+    ]
+  }
+}
