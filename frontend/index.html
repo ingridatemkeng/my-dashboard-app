@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dashboard</title>
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <h1>Interactive Dashboard</h1>
+  <div id="dashboard">
+    <!-- Form for adding new data -->
+    <form id="data-form">
+      <input type="text" id="name" placeholder="Enter name" required>
+      <input type="number" id="value" placeholder="Enter value" required>
+      <button type="submit">Add Data</button>
+    </form>
+    <!-- Data will be loaded here -->
+    <div id="data-list"></div>
+  </div>
+  <script src="js/main.js"></script>
+</body>
+</html>
