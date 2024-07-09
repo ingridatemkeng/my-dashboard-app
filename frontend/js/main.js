@@ -31,7 +31,25 @@ document.addEventListener('DOMContentLoaded', () => {
       })
       .catch(error => console.error('Error adding data:', error));
     });
-  
+
+//   // Handle deletion of data
+//   dataList.addEventListener('click', (e) => {
+//     if (e.target.classList.contains('delete-button')) {
+//       const id = e.target.dataset.id;
+//       fetch(`http://localhost:5000/api/data/${id}`, {
+//         method: 'DELETE',
+//       })
+//       .then(response => {
+//         if (response.ok) {
+//           e.target.parentElement.remove();
+//         } else {
+//           console.error('Error deleting data');
+//         }
+//       })
+//       .catch(error => console.error('Error deleting data:', error));
+//     }
+//   });
+
     function displayData(data) {
       data.forEach(item => {
         const div = document.createElement('div');

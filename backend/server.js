@@ -26,6 +26,12 @@ mongoose
 // Routes
 app.use("/api/data", require("./routes/data"));
 
-app.listen(PORT, () => {
-  console.log(`Server running on port ${PORT}`);
-});
+
+if (process.env.NODE_ENV !== 'test') {
+
+    app.listen(PORT, () => {
+    console.log(`Server running on port ${PORT}`);
+    });
+}
+
+module.exports = app;

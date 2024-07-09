@@ -26,4 +26,19 @@ router.post('/', async (req, res) => {
   }
 });
 
+// DELETE a data entry by id
+router.delete('/:id', async (req, res) => {
+    try {
+      const data = await Data.findById(req.params.id);
+      if (data == null) {
+        return res.status(404).json({ message: 'Cannot find data' });
+      }
+  
+      await data.remove();
+      res.json({ message: 'Data deleted' });
+    } catch (err) {
+      res.status(500).json({ message: err.message });
+    }
+  });
+  
 module.exports = router;
