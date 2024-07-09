@@ -1,36 +1,91 @@
+/* styles.css */
+
 body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
     background-color: #f0f0f0;
   }
   
+  h1 {
+    text-align: center;
+    color: #333;
+    margin-top: 20px;
+  }
+  
   #dashboard {
-    width: 80%;
-    background-color: white;
+    max-width: 600px;
+    margin: 20px auto;
+    background-color: #fff;
     padding: 20px;
+    border-radius: 8px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   }
   
-  form {
+  #data-form {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
     margin-bottom: 20px;
   }
   
-  input {
+  #data-form input[type="text"],
+  #data-form input[type="number"],
+  #data-form button {
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    flex: 1;
     margin-right: 10px;
-    padding: 5px;
   }
   
-  button {
-    padding: 5px 10px;
+  #data-form button {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    cursor: pointer;
+  }
+  
+  #data-form button:hover {
+    background-color: #45a049;
   }
   
   #data-list {
-    margin-top: 20px;
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  #data-list div {
+    background-color: #f9f9f9;
+    margin-bottom: 10px;
+    padding: 10px;
+    border-radius: 4px;
+  }
+  
+  #data-list div button {
+    background-color: #f44336;
+    color: white;
+    border: none;
+    padding: 8px 12px;
+    border-radius: 4px;
+    cursor: pointer;
+    float: right;
+  }
+  
+  #data-list div button:hover {
+    background-color: #e53935;
+  }
+  
+  @media (max-width: 600px) {
+    #data-form {
+      flex-direction: column;
+      align-items: stretch;
+    }
+    #data-form input[type="text"],
+    #data-form input[type="number"] {
+      margin-right: 0;
+      margin-bottom: 10px;
+    }
   }
   

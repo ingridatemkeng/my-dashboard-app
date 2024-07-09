@@ -48,16 +48,16 @@ describe('POST /api/data', () => {
   });
 });
 
-// describe('DELETE /api/data/:id', () => {
-//   it('should delete a data entry', async () => {
-//     const data = new Data({ name: 'Test', value: 123 });
-//     await data.save();
+describe('DELETE /api/data/:id', () => {
+  it('should delete a data entry', async () => {
+    const data = new Data({ name: 'Test', value: 123 });
+    await data.save();
 
-//     const response = await request(app).delete(`/api/data/${data._id}`);
-//     expect(response.status).toBe(200);
-//     expect(response.body.message).toBe('Data deleted');
+    const response = await request(app).delete(`/api/data/${data._id}`);
+    expect(response.status).toBe(200);
+    expect(response.body.message).toBe('Données supprimées avec succès');
 
-//     const remainingData = await Data.find();
-//     expect(remainingData.length).toBe(0);
-//   });
-// });
+    const remainingData = await Data.find();
+    expect(remainingData.length).toBe(0);
+  });
+});

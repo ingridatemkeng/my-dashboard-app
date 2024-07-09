@@ -26,19 +26,20 @@ router.post('/', async (req, res) => {
   }
 });
 
-// DELETE a data entry by id
+// DELETE /api/data/:id - Supprimer un élément par son ID
 router.delete('/:id', async (req, res) => {
-    try {
-      const data = await Data.findById(req.params.id);
-      if (data == null) {
-        return res.status(404).json({ message: 'Cannot find data' });
-      }
+    const { id } = req.params;
   
-      await data.remove();
-      res.json({ message: 'Data deleted' });
-    } catch (err) {
-      res.status(500).json({ message: err.message });
+    try {
+      const deletedData = await Data.findByIdAndDelete(id);
+      if (!deletedData) {
+        return res.status(404).json({ message: 'Données non trouvées' });
+      }
+      res.status(200).json({ message: 'Données supprimées avec succès', data: deletedData });
+    } catch (error) {
+      console.error(error);
+      res.status(500).json({ message: 'Erreur lors de la suppression des données' });
     }
   });
-  
+
 module.exports = router;
